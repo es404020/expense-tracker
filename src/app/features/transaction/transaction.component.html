@@ -1,0 +1,36 @@
+
+
+
+
+
+
+<div class="container">
+
+
+  <!-- Balances Section -->
+  <mat-card style="padding: 16px;">
+    <div class="balances-header">
+      <h3><button mat-raised-button color="primary" (click)="openTransactionDialog()">
+        Add Transaction
+      </button></h3>
+
+    </div>
+    <div class="balances">
+      <mat-card class="balance-item">
+        <mat-icon fontIcon="attach_money" class="currency-icon"></mat-icon>
+        <h2>{{ (totalBalance$ | async) | currency }}</h2>
+      </mat-card>
+      <mat-card class="balance-item">
+        <mat-icon fontIcon="euro" class="currency-icon"></mat-icon>
+
+        <h2>{{ (totalBalance$ | async) | currency:'EUR':'symbol' }}</h2>
+
+      </mat-card>
+      <mat-card class="balance-item">
+        <mat-icon fontIcon="currency_pound" class="currency-icon"></mat-icon>
+        <h2>{{ (totalBalance$ | async) | currency:'GBP':'symbol' }}</h2>
+
+      </mat-card>
+    </div>
+  </mat-card>
+</div>

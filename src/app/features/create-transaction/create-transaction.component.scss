@@ -1,0 +1,17 @@
+.form-grid {
+  display: flex;
+  flex-direction: column; /* Aligns items in a column layout */
+  gap: 16px; /* Adds spacing between fields */
+}
+
+.form-item {
+  width: 100%; /* Ensures each field spans the full width */
+}
+
+mat-form-field {
+  width: 100%; /* Makes the Material form field occupy full width */
+}
+
+button {
+  width: 100%; /* Ensures the button occupies the full row width */
+}

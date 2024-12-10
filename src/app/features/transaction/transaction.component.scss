@@ -1,0 +1,80 @@
+/* General styles */
+.container {
+  padding: 16px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.username {
+  margin-left: 8px;
+}
+
+/* Alert Section */
+.alert-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #ffebee;
+  color: #d32f2f;
+  flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+.alert-content {
+  display: flex;
+  align-items: center;
+}
+
+.alert-content mat-icon {
+  margin-right: 8px;
+}
+
+/* Balances Section */
+.balances-header {
+  margin-bottom: 16px;
+}
+
+.balances {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap; /* Ensures balances wrap on smaller screens */
+}
+
+.balance-item {
+  flex: 1 1 calc(33.33% - 16px); /* Each card takes 1/3 of the row width with gaps */
+  text-align: center;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+.balance-item img {
+  width: 40px;
+  height: 25px;
+  margin-bottom: 8px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .balance-item {
+    flex: 1 1 calc(50% - 16px); /* Each card takes half the row width on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .balance-item {
+    flex: 1 1 100%; /* Each card takes full width on small screens */
+  }
+
+  .alert-card {
+    flex-direction: column; /* Stacks content vertically */
+    text-align: center;
+  }
+
+  .alert-card button {
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,15 @@
+.transaction-list-container {
+  width: 100%;
+  padding: 20px;
+}
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.income-amount {
+  color: green;
+}
+.expense-amount {
+  color: red;
+}
