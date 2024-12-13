@@ -27,7 +27,7 @@ export class TransactionQuery extends QueryEntity<TransactionState> {
     );
   }
 
-   // Advanced filtering method
+ 
    selectFilteredTransactions(
     type?: TransactionType,
     category?: string,
@@ -36,17 +36,17 @@ export class TransactionQuery extends QueryEntity<TransactionState> {
   ): Observable<Transaction[]> {
     return this.selectAll().pipe(
       map(transactions => {
-        // Apply type filter
+
         let filteredTransactions = type
           ? transactions.filter(t => t.type === type)
           : transactions;
 
-        // Apply category filter
+
         filteredTransactions = category
           ? filteredTransactions.filter(t => t.category === category)
           : filteredTransactions;
 
-        // Sort transactions
+
         return filteredTransactions.sort((a, b) => {
           const compareValue = sortBy === 'date'
             ? a.date.getTime() - b.date.getTime()

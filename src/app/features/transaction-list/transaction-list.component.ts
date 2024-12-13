@@ -71,6 +71,10 @@ export class TransactionListComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
+
+    window.addEventListener('resize', () => {
+      this.updateDisplayedColumns(window.innerWidth);
+    });
   }
 
   ngAfterViewInit() {
@@ -124,5 +128,13 @@ export class TransactionListComponent implements OnInit {
 
   deleteTransaction(id: string) {
     this.transactionService.removeTransaction(id);
+  }
+
+  updateDisplayedColumns(width: number) {
+    if (width < 768) {
+      this.displayedColumns = ['name', 'amount', 'date', 'actions']; // Minimal columns
+    } else {
+      this.displayedColumns = ['select', 'name', 'amount', 'category', 'date', 'actions'];
+    }
   }
 }

@@ -1,7 +1,4 @@
-.transaction-list-container {
-  width: 100%;
-  padding: 20px;
-}
+
 .filter-section {
   display: flex;
   justify-content: space-between;
@@ -12,4 +9,63 @@
 }
 .expense-amount {
   color: red;
+}
+
+
+
+
+.transaction-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.controls-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.controls-section mat-form-field {
+  flex: 1 1 200px; /* Shrink to fit smaller screens, grow proportionally */
+  min-width: 150px;
+}
+
+table {
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling for small screens */
+}
+@media (max-width: 768px) {
+  .transaction-list-container {
+    padding: 0.5rem;
+  }
+
+  table {
+    display: block; /* Force the table to become scrollable */
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    font-size: 0.85rem; /* Smaller font for table content */
+    padding: 0.5rem;
+  }
+
+  .controls-section {
+    flex-direction: column; /* Stack filters vertically */
+  }
+}
+@media (max-width: 480px) {
+  .mat-header-cell:nth-child(2), /* Example: hide second column */
+  .mat-cell:nth-child(2) {
+    display: none;
+  }
+}
+button {
+  min-width: 40px;
+}
+
+mat-form-field {
+  width: 100%; /* Full width for small screens */
 }
